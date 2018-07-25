@@ -16,7 +16,7 @@ int main ()
         scanf("%d", &pesos[x]);
 
     qsort(pesos, n, sizeof (int), comparar);
-    int possivel = 1;
+    register int possivel = 1;
     for (x = 0; x < n - 1; x++)
     {
         if(pesos[x + 1] - pesos[x] > 8)
@@ -30,6 +30,5 @@ int main ()
     if (possivel)
         printf("S\n");
 
-    return (0);
+    return 0;
 }
-

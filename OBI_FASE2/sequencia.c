@@ -11,8 +11,8 @@ int main () {
     scanf("%d %d %d", &teste, &y, &z);
     int elem[teste];
     int marc[teste];
-    int soma = 0;
-    int q = 0;
+    register int soma = 0;
+    register int q = 0;
     while (q < teste)
     {
         scanf("%d", &elem[q]);
@@ -34,13 +34,13 @@ int main () {
         q++;
     }
     qsort(novo, soma, sizeof (int), comparar);
-    int maior = INT_MIN;
-    int simulado = 0, naoAchou = 1;
+    register int maior = INT_MIN;
+    register int simulado = 0, naoAchou = 1;
     q = y;
     while (q < z)
     {
-        int i = soma - 1;
-        int d = soma - q;
+        register int i = soma - 1;
+        register int d = soma - q;
         while (i > d)
             simulado += novo[i];
 
