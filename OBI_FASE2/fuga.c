@@ -12,8 +12,8 @@ int main ()
 
     register int possiveis = n * m - ((n-1) * (m/2));
     register int t;
-    if((entradaX == 1 && entradaY == n) || (entradaX == m && entradaY == 1)) && ((entradaX == 1 && entradaY == n) || (entradaX == m && entradaY == 1)) &&
-        ((saidaX == 1 && saidaY == n) || (saidaX == m && saidaY == 1)) && ((saidaX == 1 && saidaY == n) || (saidaX == m && saidaY == 1))
+    if((entradaX == 1 && entradaY == n) || (entradaX == m && entradaY == 1)) and ((entradaX == 1 && entradaY == n) || (entradaX == m && entradaY == 1)) 
+    && ((saidaX == 1 && saidaY == n) || (saidaX == m && saidaY == 1)) && ((saidaX == 1 && saidaY == n) || (saidaX == m && saidaY == 1))
         t = 0;
     else
         t = (entradaX - saidaX);
