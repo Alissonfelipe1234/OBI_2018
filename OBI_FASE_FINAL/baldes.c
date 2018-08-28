@@ -27,26 +27,48 @@ int main()
             if(x < y)
             {
                 x--;
-                register menor = baldes[x][0], maior = baldes[x][0], menorIndex[2] = {x,0}, maiorIndex[2] = {x,0};
+                register menor = baldes[x][0], maior = baldes[x][0], menorIndex[2] = {x,0}, maiorIndex[2] = {x,0},  menoranterior[2] = {x,0}, maioranterior[2] = {x,0};
                 for (register int g = x; g<y; i++)
                 {
                     for(register int f = 0; f < quantasBolas[g]; f++)
                     {
                         if (menor > baldes[g][f])
                         {
+                            menoranterior[0] = menorIndex[0];
+                            menoranterior[1] = menorIndex[1];
                             menor = baldes[g][f];
                             menorIndex[0] = g;
                             menorIndex[1] = f;
+                        }
+                        if (baldes[menoranterior[0]][menoranterior[1]] > baldes[g][f])
+                        {
+                            menoranterior[0] = g;
+                            menoranterior[1] = f;
                         }
                         if (maior < baldes[g][f])
                         {
+                            maioranterior[0] = maiorIndex[0];
+                            maioranterior[1] = maiorIndex[1];
                             menor = baldes[g][f];
                             menorIndex[0] = g;
                             menorIndex[1] = f;
+                        }                        
+                        if (baldes[maioranterior[0]][maioranterior[1]] < baldes[g][f])
+                        {
+                            menoranterior[0] = g;
+                            menoranterior[1] = f;
                         }
                     }
                 }
-                printf("%i\n", maior - menor);                
+                if (maiorIndex[0] != menorIndex[0])
+                    printf("%i\n", maior - menor);                
+                else
+                {
+                    if((menor - baldes[maioranterior[0]][maioranterior[1]]) > baldes[menoranterior[0]][menoranterior[1]] - maior)
+                        printf("%i\n", menor - baldes[maioranterior[0]][maioranterior[1]]);
+                    else
+                        printf("%i\n", baldes[menoranterior[0]][menoranterior[1]] - maior);
+                }
             }
         }
     }
