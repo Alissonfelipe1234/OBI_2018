@@ -5,7 +5,10 @@ struct
         int a;
         int b;
         int ping;
+        int test;
 }typedef cabo;
+
+//FUNCÃO PRINCIPAL DO PROGRAMA
 
 int main ()
 {
@@ -52,6 +55,7 @@ int menorCaminho(int desejo, int procurado, cabo* bd, int todos)
                 if(bd[r].ping < menor)
                 {
                     menor = bd[r].ping;
+                    
                     encontrado = r;
                 }
             }
@@ -72,4 +76,5 @@ int menorCaminho(int desejo, int procurado, cabo* bd, int todos)
     }
     menor += menorCaminho(encontrado, procurado, &bd, todos);
     return menor;
+
 }
